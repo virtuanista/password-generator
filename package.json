@@ -1,0 +1,23 @@
+{
+  "name": "secure-password-gen",
+  "version": "1.0.0",
+  "description": "Generar contraseñas seguras desde la CLI",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "security",
+    "cli"
+  ],
+  "author": "sabiopobre",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "chalk": "^5.0.0"
+  }
+}

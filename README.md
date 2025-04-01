@@ -54,7 +54,7 @@ node src/index.js -n -s
 </p>
 
 <p align="center">
-	<img src="https://soniditos.com/cat_footer.svg" />
+	<img src="https://open.soniditos.com/cat_footer.svg" />
 </p>
 
 <p align="center">

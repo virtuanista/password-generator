@@ -14,7 +14,7 @@
     "security",
     "cli"
   ],
-  "author": "sabiopobre",
+  "author": "virtuanista",
   "license": "MIT",
   "dependencies": {
     "commander": "^9.0.0",

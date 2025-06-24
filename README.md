@@ -13,7 +13,7 @@ Generar contraseñas seguras con interfaz en línea de comandos.
 ## Instalación
 
 ```bash
-git clone https://github.com/sabiopobre/password-generator.git
+git clone https://github.com/virtuanista/password-generator.git
 
 cd password-generator
 

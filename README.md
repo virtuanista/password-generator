@@ -6,6 +6,8 @@
 ![CLI](https://img.shields.io/badge/interfaz-línea_de_comandos-555)
 ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue)
 
+[![Usar en el navegador](https://img.shields.io/badge/▶_Usar_en_el_navegador-sin_instalar_nada-22c55e?style=for-the-badge)](https://virtuanista.github.io/password-generator/)
+
 ```text
 $ node src/index.js -l 20 -n -s -c 3
 
@@ -19,7 +21,7 @@ Entropía: ~129 bits (muy fuerte)
 
 ## Versión web
 
-En [`web/index.html`](web/index.html) tienes la misma lógica en una página: eliges longitud, números y símbolos, ves la entropía y la copias con un clic. Usa `crypto.getRandomValues` con muestreo por rechazo para que no haya sesgo, y nada sale de tu navegador.
+En **[virtuanista.github.io/password-generator](https://virtuanista.github.io/password-generator/)** tienes la misma lógica en una página: eliges longitud, números y símbolos, ves la entropía y la copias con un clic. Usa `crypto.getRandomValues` con muestreo por rechazo para que no haya sesgo, y nada sale de tu navegador. El código está en [`web/index.html`](web/index.html).
 
 ![Versión web](docs/web.jpg)
 

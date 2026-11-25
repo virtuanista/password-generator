@@ -71,3 +71,19 @@ Comprueba la longitud, que aparezca cada grupo de caracteres elegido, los errore
 ## Licencia
 
 [MIT](LICENSE) © 2025 virtuanista
+
+<p align="center">
+	Repositorio generado por <a href="https://github.com/virtuanista" target="_blank">virtu 🎣</a>
+</p>
+
+<p align="center">
+	<img src="https://open.soniditos.com/cat_footer.svg" alt="Gatito" />
+</p>
+
+<p align="center">
+	Copyright &copy; 2025
+</p>
+
+<p align="center">
+	<a href="LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8" alt="Licencia MIT" /></a>
+</p>

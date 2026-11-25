@@ -1,3 +1,5 @@
+<p align="center"><b>Español</b> · <a href="README.en.md">English</a></p>
+
 # Generador de contraseñas seguras
 
 **Genera contraseñas aleatorias desde la terminal con el generador criptográfico de Node.js.**

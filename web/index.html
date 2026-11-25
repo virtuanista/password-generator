@@ -65,6 +65,39 @@
 </main>
 <div class="toast" id="toast">Copiada ✔</div>
 <script>
+// Español por defecto; ?lang=en muestra la página en inglés.
+const EN = {
+ "Generador de contraseñas seguras": "Secure password generator",
+ "🔐 Generador de contraseñas": "🔐 Password generator",
+ "Usa el generador criptográfico de tu navegador. Nada sale de tu equipo.": "Uses your browser’s cryptographic generator. Nothing leaves your computer.",
+ "Copiar": "Copy",
+ "Copiar contraseña": "Copy password",
+ "Longitud:": "Length:",
+ "Incluir números (0-9)": "Include numbers (0-9)",
+ "Incluir símbolos (!@#$…)": "Include symbols (!@#$…)",
+ "Generar otra": "Generate another",
+ "Misma lógica que la herramienta de terminal: al menos un carácter de cada grupo y mezcla de Fisher-Yates.": "Same logic as the terminal tool: at least one character from each group and a Fisher-Yates shuffle.",
+ "Código en GitHub": "Code on GitHub",
+ "Copiada ✔": "Copied ✔",
+ "Muy fuerte": "Very strong",
+ "Fuerte": "Strong",
+ "Aceptable": "Fair",
+ "Débil": "Weak",
+ "bits de entropía": "bits of entropy"
+};
+const LANG = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es', tr = s => LANG === 'en' ? EN[s] ?? s : s;
+if (LANG === 'en') {
+  document.documentElement.lang = 'en'; document.title = tr(document.title);
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let n; n = w.nextNode();) { const k = n.data.replace(/\s+/g, ' ').trim(); if (EN[k]) n.data = n.data.replace(/^(\s*)[\s\S]*?(\s*)$/, (_, a, b) => a + EN[k] + b); }
+  for (const el of document.querySelectorAll('[aria-label],[title],[alt],[placeholder]')) for (const a of ['aria-label', 'title', 'alt', 'placeholder']) if (EN[el.getAttribute(a)]) el.setAttribute(a, EN[el.getAttribute(a)]);
+}
+{ const b = document.createElement('p'); b.style.cssText = 'position:absolute;top:12px;right:16px;margin:0;font-size:14px';
+  b.innerHTML = LANG === 'en' ? '<a href="?lang=es" lang="es">Español</a> · <b>English</b>' : '<b>Español</b> · <a href="?lang=en" lang="en">English</a>';
+  b.querySelector('a').style.color = 'inherit'; (document.querySelector('[data-lang]') ?? document.body).append(b);
+  b.querySelector('a').addEventListener('click', e => { e.currentTarget.href = e.currentTarget.getAttribute('href').split('#')[0] + location.hash; }); }
+</script>
+<script>
   const LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const NUMBERS = '0123456789';
   const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
@@ -103,9 +136,9 @@
     $('pw').textContent = generate(len, n, s);
     const bits = entropy(len, n, s);
     const [name, color] = bits >= 100 ? ['Muy fuerte', 'var(--acc)'] : bits >= 70 ? ['Fuerte', 'var(--acc)'] : bits >= 50 ? ['Aceptable', 'var(--warn)'] : ['Débil', 'var(--bad)'];
-    $('level').textContent = name;
+    $('level').textContent = tr(name);
     $('level').style.color = color;
-    $('bits').textContent = `~${bits} bits de entropía`;
+    $('bits').textContent = `~${bits} ${tr('bits de entropía')}`;
     $('bar').style.width = Math.min(100, bits / 1.28) + '%';
     $('bar').style.background = color;
   }
